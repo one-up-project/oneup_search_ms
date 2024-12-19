@@ -2,7 +2,7 @@
   "name": "search_ms",
   "version": "1.0.0",
   "description": "oneup_search_ms",
-  "main": "index.js",  
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,12 +13,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module", 
+  "type": "module",
   "bugs": {
     "url": "https://github.com/one-up-project/oneup_search_ms/issues"
   },
   "homepage": "https://github.com/one-up-project/oneup_search_ms#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "mysql2": "^3.11.5"
   }
