@@ -6,7 +6,7 @@ export const getStores = (req, res) => {
   //obtener los parametros lat y lon del usuario
     const userLatitude = req.params.lat;
     const userLongitude = req.params.lon;
-    //traer las reseñas laborales asociadas a un usuario especifico
+    //obtener las ubicaciones de tiendas en un rango de 2km respecto del usuario
     const q = 'select store_name, lat, lon from oneup_users_db.store WHERE lat BETWEEN (? - 0.02) AND (? + 0.02) AND lon BETWEEN (? - (0.02 / COS(RADIANS(?)))) AND (? + (0.02 / COS(RADIANS(?))));'
                 
     
