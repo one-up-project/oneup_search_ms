@@ -1,11 +1,13 @@
+import express from "express";
+import { getStores, getStoresByName } from "../callbacks/store.js";
 
-import express  from "express";
-import { getStores } from "../callbacks/store.js";
+const router = express.Router();
 
-const router = express.Router()
-
-//obtener las reseñas de productos
+//obtener las tiendas en un radio de 2km
 //lat and lon from the user
 router.get("/get-near-stores/:lat/:lon", getStores);
 
-export default router 
+//obtener las tiendas por nombre y categoria
+router.get("/get-stores-by-name/:name/:category", getStoresByName);
+
+export default router;
