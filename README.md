@@ -1,16 +1,29 @@
+# OneUp Search Microservice
 
-#oneup_search_ms
+## Descripción General
+Este servicio implementa todas las tareas relacionadas con la búsqueda de tiendas y productos por parte de los usuarios de la plataforma.
 
-##De manera general en este servicio se busca implementar toda aquella tarea asociada a las busquedas de tiendas y productos por parte de parte de los usuarios de la plataforma. 
+## Módulos del Microservicio
 
-###Modulos del microservicio:
--routes-> se definen los endpoints a los cuales se realizan las respectivas peticiones
-          - consulta de tiendas cercanas al usuario en un radio de 2km
-          - consulta de tiendas por nombre y/o categoria
--callbacks-> define la implementacion de las consultas al indice definido en elastic search
--index.js-> define la creacion de la aplicacion en el framework express, ademas de los origenes permitidos
--connect-elasctic.js->define el punto de conexion con el servicio de elastic_search 
+###  `routes/`
+Define los endpoints a los cuales se realizan las respectivas peticiones:
+- Consulta de tiendas cercanas al usuario en un radio de 2 km.
+- Consulta de tiendas por nombre y/o categoría.
 
-###docker
--1. crear imagen de contenedor a partir del dockerfile establecido
--2. obtener imagen desde dokcer hub: docker pull d0kc3rgriverab/oneup_search_ms:v2
+###  `callbacks/`
+Define la implementación de las consultas al índice definido en **Elasticsearch**.
+
+###  `index.js`
+Define la creación de la aplicación en el framework **Express**, además de los orígenes permitidos.
+
+###  `connect-elastic.js`
+Define el punto de conexión con el servicio de **Elasticsearch**.
+
+##  Docker
+### Obtención de la Imagen
+1. Crear la imagen de contenedor a partir del `Dockerfile` establecido.
+2. Obtener la imagen desde Docker Hub:
+   ```
+   docker pull d0kc3rgriverab/oneup_search_ms:v2
+   ```
+
