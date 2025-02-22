@@ -25,6 +25,28 @@ export const getStores = async (req, res) => {
   }
 };
 
+export const getStoreById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const response = await elasticClient.search({
+      index: "stores_info",
+      query: {
+        match: {
+          id_store: id,
+        },
+      },
+    });
+
+    const store = response.hits.hits.map((hit) => hit._source);
+    console.log(store[0]);
+    res.status(200).json(store[0]);
+  } catch (error) {
+    console.error("Error al buscar tienda:", error);
+    res.status(500).json({ error: "Error al buscar tienda" });
+  }
+};
+
 export const getStoresByName = async (req, res) => {
   let { name, category } = req.params;
 
