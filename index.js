@@ -5,9 +5,6 @@ import storeRoutes from "./routes/stores.js";
 const PORT = 8800;
 const app = express();
 
-// Configuración básica de CORS
-app.use(cors());
-
 app.options("/", (req, res) => {
   //res.setHeader("Access-Control-Allow-Origin", FRONTEND_URL);
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
@@ -18,9 +15,10 @@ app.options("/", (req, res) => {
 // permitir solo ciertos orígenes
 // react app http://localhost:3000
 // gateway http://localhost:4000
+// Configuración básica de CORS
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:4000"],
+    origin: ["http://localhost:4000"],
     methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
     credentials: true,
   })
