@@ -2,7 +2,8 @@ import express from "express";
 import cors from "cors";
 import storeRoutes from "./routes/stores.js";
 
-const PORT = 8800;
+const PORT = process.env.PORT;
+const URL_GATEWAY = process.env.URL_GATEWAY;
 const app = express();
 
 app.options("/", (req, res) => {
@@ -18,7 +19,7 @@ app.options("/", (req, res) => {
 // Configuración básica de CORS
 app.use(
   cors({
-    origin: ["http://localhost:4000"],
+    origin: [URL_GATEWAY],
     methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
     credentials: true,
   })
