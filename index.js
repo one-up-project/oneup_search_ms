@@ -19,7 +19,7 @@ app.options("/", (req, res) => {
 // Configuración básica de CORS
 app.use(
   cors({
-    origin: [URL_GATEWAY],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
     credentials: true,
   })
